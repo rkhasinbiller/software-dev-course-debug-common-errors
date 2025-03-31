@@ -24,16 +24,19 @@ Think about which debugging methods you found most useful and how you might appl
 // Description:
 // This program is intended to display a simple prompt in the console but fails to run.
 
-console.log("Welcome to the bootcamp
+console.log("Welcome to the bootcamp");
 
 // What’s Wrong?
 
+// Type of Error: SyntaxError
+// Correct Error: console.log("Welcome to the bootcamp");
+// 
 
 // Program B
 // Description:
 // This code attempts to multiply each number in an array by 2 and display the results. However, it crashes at runtime.
 
-let numbers = [2, 4, "eight"];
+let numbers = [2, 4, 8];
 for (let i = 0; i < numbers.length; i++) {
   let doubled = numbers[i] * 2;
   console.log(doubled);
@@ -41,7 +44,9 @@ for (let i = 0; i < numbers.length; i++) {
 
 // What’s Wrong?
 
-
+//"eight" is a string, not a number
+// it's a runtime error
+// Fix: Replace "eight" with 8
 
 // Program C (Logic Error)
 // Description:
@@ -51,12 +56,15 @@ function isPrime(num) {
   if (num < 2) return false;
   for (let i = 2; i < num; i++) {
     if (num % i === 0) {
-      return true;  // Supposed to indicate num is NOT prime
+      return false;  // Supposed to indicate num is NOT prime
     }
   }
-  return false; // Supposed to indicate num IS prime
+  return true; // Supposed to indicate num IS prime
 }
 
 console.log(isPrime(7)); // Expected true but gets false
 
 // What’s Wrong?
+
+// it's a Logic error
+// 2nd and 3rd return lines need to be swapped (swap true for false)
